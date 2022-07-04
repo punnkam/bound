@@ -1,2 +1,2 @@
 # bound-finance
-Protocol enabling subscriptions through time-based NFTs
+Platform enabling subscriptions through time-based NFTs
