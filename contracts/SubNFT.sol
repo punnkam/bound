@@ -162,13 +162,14 @@ contract SubNFT is ERC721, Ownable, Pausable, KeeperCompatibleInterface {
     }
 
     // adjust subscription parameters
-    function adjustParams(uint256 _newPrice, uint256 _newInterval)
-        external
-        onlyOwner
-        beforeSale
-    {
+    function adjustParams(
+        uint256 _newPrice,
+        uint256 _newInterval,
+        uint256 _newMax
+    ) external onlyOwner beforeSale {
         _setPrice(_newPrice);
         _setInterval(_newInterval);
+        _setMax(_newMax);
 
         emit ModifiedParams(_newPrice, _newInterval, block.timestamp);
     }
@@ -228,6 +229,10 @@ contract SubNFT is ERC721, Ownable, Pausable, KeeperCompatibleInterface {
 
     function _setPrice(uint256 _price) internal {
         sub_price = _price;
+    }
+
+    function _setMax(uint256 _max) internal {
+        max_subs = _max;
     }
 
     // set base uri
