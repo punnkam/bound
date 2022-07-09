@@ -30,7 +30,7 @@ import {
   FolderIcon,
   HomeIcon,
   InboxIcon,
-  MenuIcon,
+  // MenuIcon,
   DesktopComputerIcon,
   XIcon,
 } from '@heroicons/react/outline';
