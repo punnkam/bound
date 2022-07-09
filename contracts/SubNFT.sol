@@ -167,8 +167,8 @@ contract SubNFT is ERC721, Ownable, Pausable, KeeperCompatibleInterface {
         onlyOwner
         beforeSale
     {
-        sub_price = _newPrice;
-        sub_interval = _newInterval;
+        _setPrice(_newPrice);
+        _setInterval(_newInterval);
 
         emit ModifiedParams(_newPrice, _newInterval, block.timestamp);
     }
