@@ -15,8 +15,8 @@ contract SubNFT is ERC721, Ownable, Pausable, KeeperCompatibleInterface {
     string public baseTokenURI;
     uint256 private sub_price;
     uint256 private sub_interval;
-    uint256 private sale_duration;
     uint256 private start_timestamp;
+    uint256 private max_subs; // 0 for no limit
 
     // Keepers variables
     uint256 public keeper_count;
@@ -60,11 +60,11 @@ contract SubNFT is ERC721, Ownable, Pausable, KeeperCompatibleInterface {
         string memory _symbol,
         uint256 _price,
         uint256 _interval,
-        uint256 _duration
+        uint256 _maximum
     ) ERC721(_name, _symbol) {
         sub_price = _price;
         sub_interval = _interval;
-        sale_duration = _duration;
+        max_subs = _maximum;
         _pause();
     }
 
@@ -91,10 +91,6 @@ contract SubNFT is ERC721, Ownable, Pausable, KeeperCompatibleInterface {
         return sub_interval;
     }
 
-    function get_sale_duration() external view returns (uint256) {
-        return sale_duration;
-    }
-
     /** User functions */
 
     // mint
@@ -108,6 +104,10 @@ contract SubNFT is ERC721, Ownable, Pausable, KeeperCompatibleInterface {
         require(
             msg.value >= sub_price * _intervals,
             "Not enough Ether to purchase this subscription length"
+        );
+        require(
+            max_subs == 0 || tokenMinted <= max_subs,
+            "This subscription has sold out"
         );
         _safeMint(msg.sender, tokenMinted);
         _tokenIds.increment();
@@ -144,9 +144,14 @@ contract SubNFT is ERC721, Ownable, Pausable, KeeperCompatibleInterface {
 
     /** Owner functions */
 
-    // unpause sale
+    // start sale
     function startSale() external onlyOwner {
         _unpause();
+    }
+
+    // end sale
+    function endSale() external onlyOwner {
+        _pause();
         start_timestamp = block.timestamp;
         lastTimestamp = start_timestamp;
     }
@@ -217,8 +222,16 @@ contract SubNFT is ERC721, Ownable, Pausable, KeeperCompatibleInterface {
 
     /** Internal functions */
 
+    function _setInterval(uint256 _interval) internal {
+        sub_interval = _interval;
+    }
+
+    function _setPrice(uint256 _price) internal {
+        sub_price = _price;
+    }
+
     // set base uri
-    function setBaseURI(string memory _baseTokenURI) public onlyOwner {
+    function _setBaseURI(string memory _baseTokenURI) public onlyOwner {
         baseTokenURI = _baseTokenURI;
     }
 }
