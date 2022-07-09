@@ -170,7 +170,7 @@ export default function Nav() {
           <div className="flex flex-col flex-1 min-h-0 bg-white border-r border-gray-200">
             <div className="flex flex-col flex-1 pt-5 pb-4 overflow-y-auto">
               <div className="flex items-center flex-shrink-0 px-4">
-                <img className="w-auto h-8" src="Logo.svg" alt="Bound" />
+                <Image className="w-auto h-8" src="Logo.svg" alt="Bound" />
               </div>
               <nav className="flex-1 px-2 mt-5 space-y-1 bg-white">
                 {navigation.map((item) => (
