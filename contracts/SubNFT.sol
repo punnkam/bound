@@ -55,6 +55,9 @@ contract SubNFT is ERC721, Ownable, Pausable, KeeperCompatibleInterface {
         uint256 timestamp
     );
 
+    // withdrew from cotrct
+    event Withdrew(address owner, uint256 amount);
+
     constructor(
         string memory _name,
         string memory _symbol,
@@ -69,13 +72,6 @@ contract SubNFT is ERC721, Ownable, Pausable, KeeperCompatibleInterface {
     }
 
     /** Modifiers */
-    modifier tokenExpired(uint256 _tokenId) {
-        require(
-            block.timestamp > tokenToDeadline[_tokenId],
-            "Token has not expired yet"
-        );
-        _;
-    }
 
     modifier beforeSale() {
         require(start_timestamp == 0, "Invalid Action: Sale has started");
@@ -89,6 +85,14 @@ contract SubNFT is ERC721, Ownable, Pausable, KeeperCompatibleInterface {
 
     function get_sub_interval() external view returns (uint256) {
         return sub_interval;
+    }
+
+    function get_token_deadline(uint256 _tokenId)
+        external
+        view
+        returns (uint256)
+    {
+        return tokenToDeadline[_tokenId];
     }
 
     /** User functions */
@@ -119,11 +123,9 @@ contract SubNFT is ERC721, Ownable, Pausable, KeeperCompatibleInterface {
     }
 
     // renew
-    function renew(uint256 _tokenId, uint256 _intervals)
-        external
-        payable
-        tokenExpired(_tokenId)
-    {
+    // TODO(punnkam): Add auto renew functionality
+    function renew(uint256 _tokenId, uint256 _intervals) external payable {
+        require(_tokenId < _tokenIds.current(), "This tokenId doesn't exist");
         require(
             msg.sender == ownerOf(_tokenId),
             "You don't own this subscription"
@@ -146,19 +148,21 @@ contract SubNFT is ERC721, Ownable, Pausable, KeeperCompatibleInterface {
 
     // start sale
     function startSale() external onlyOwner {
+        start_timestamp = block.timestamp;
+        lastTimestamp = start_timestamp;
         _unpause();
     }
 
     // end sale
     function endSale() external onlyOwner {
         _pause();
-        start_timestamp = block.timestamp;
-        lastTimestamp = start_timestamp;
     }
 
     // withdraw funds
     function withdraw() external onlyOwner {
-        payable(owner()).transfer(address(this).balance);
+        uint256 balance = address(this).balance;
+        payable(owner()).transfer(balance);
+        emit Withdrew(owner(), balance);
     }
 
     // adjust subscription parameters
