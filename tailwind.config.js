@@ -11,5 +11,10 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  variants: {
+    extend: {
+      backgroundColor: ['active'],
+    },
+  },
+  plugins: [require('@tailwindcss/aspect-ratio')],
 };

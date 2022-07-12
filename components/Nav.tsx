@@ -108,16 +108,16 @@ export default function Nav() {
                           href={item.href}
                           className={classNames(
                             item.current
-                              ? 'bg-gray-100 text-amber-400'
-                              : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900',
+                              ? 'hover:bg-gray-100 hover:text-amber-400 text-gray-600 active:text-amber-400'
+                              : 'hover:bg-gray-100 hover:text-amber-400 text-gray-600 active:text-amber-400',
                             'group flex items-center px-2 py-4 text-base font-medium rounded-md'
                           )}
                         >
                           <item.icon
                             className={classNames(
                               item.current
-                                ? 'text-amber-400'
-                                : 'text-gray-400 group-hover:text-gray-500',
+                                ? 'hover:bg-gray-100 hover:text-amber-400 text-gray-600 active:text-amber-400'
+                                : 'hover:bg-gray-100 hover:text-amber-400 text-gray-600 active:text-amber-400',
                               'mr-4 flex-shrink-0 h-6 w-6'
                             )}
                             aria-hidden="true"
@@ -168,17 +168,17 @@ export default function Nav() {
                     key={item.name}
                     href={item.href}
                     className={classNames(
-                      item.current
-                        ? 'bg-gray-100 text-amber-400'
-                        : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900',
+                      item
+                        ? 'hover:bg-gray-100 hover:text-amber-400 text-gray-600 active:text-amber-400'
+                        : 'hover:bg-gray-100 hover:text-amber-400 text-gray-600 active:text-amber-400',
                       'group flex items-center px-2 py-4 text-base font-medium rounded-md'
                     )}
                   >
                     <item.icon
                       className={classNames(
-                        item.current
-                          ? 'text-amber-400'
-                          : 'text-gray-400 group-hover:text-gray-500 ',
+                        item
+                          ? 'hover:bg-gray-100 text-gray-600 hover:text-amber-400 active:text-amber-400'
+                          : 'hover:bg-gray-100 text-gray-600 hover:text-amber-400 active:text-amber-400',
                         'mr-4 flex-shrink-0 h-6 w-6'
                       )}
                       aria-hidden="true"
@@ -205,22 +205,22 @@ export default function Nav() {
               <MenuAlt1Icon className="w-6 h-6" aria-hidden="true" />
             </button>
           </div>
-          <main className="flex-1">
+          {/* <main className="flex-1">
             <div className="py-6">
               <div className="px-4 mx-auto max-w-7xl sm:px-6 md:px-8">
                 <h1 className="text-2xl font-semibold text-gray-900">
                   Dashboard
                 </h1>
               </div>
-              <div className="px-4 mx-auto max-w-7xl sm:px-6 md:px-8">
-                {/* Replace with your content */}
-                {/* <div className="py-4">
+              <div className="px-4 mx-auto max-w-7xl sm:px-6 md:px-8"> */}
+          {/* Replace with your content */}
+          {/* <div className="py-4">
                   <div className="border-4 border-gray-200 border-dashed rounded-lg h-96" />
                 </div> */}
-                {/* /End replace */}
-              </div>
+          {/* /End replace */}
+          {/* </div>
             </div>
-          </main>
+          </main> */}
         </div>
       </div>
     </>
