@@ -7,8 +7,28 @@
     "hardhat": "^2.10.0"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@chainlink/contracts": "^0.4.1",
     "@openzeppelin/contracts": "^4.7.0",
     "@openzeppelin/subgraphs": "^0.1.8-5"
+=======
+    "@headlessui/react": "^1.6.6",
+    "@heroicons/react": "^1.0.6",
+    "next": "12.2.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.0",
+    "@types/node": "18.0.3",
+    "@types/react": "18.0.15",
+    "@types/react-dom": "18.0.6",
+    "autoprefixer": "^10.4.7",
+    "eslint": "8.19.0",
+    "eslint-config-next": "12.2.1",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.1.5",
+    "typescript": "4.7.4"
+>>>>>>> main
   }
 }
