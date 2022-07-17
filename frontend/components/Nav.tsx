@@ -12,6 +12,7 @@ import {
   MenuAlt3Icon,
   MenuAlt1Icon,
 } from '@heroicons/react/outline';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 const navigation = [
   { name: 'Home', href: '/', icon: HomeIcon, current: true },
@@ -37,6 +38,7 @@ export default function Nav() {
   return (
     // Fully expanded sidebar
     <>
+    {/* <ConnectButton label="connect" accountStatus="avatar" chainStatus="icon" /> */}
       <div>
         <Transition.Root show={sidebarOpen} as={Fragment}>
           {/* Dialog is the actual panel that slides in and out. */}
@@ -222,7 +224,7 @@ export default function Nav() {
             </div>
           </main> */}
         </div>
-      </div>
+      </div>      
     </>
   );
 }
