@@ -1,17 +1,14 @@
 {
-  "name": "hardhat-project",
-  "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^1.0.2",
-    "@types/jest": "^28.1.4",
-    "chai": "^4.3.6",
-    "hardhat": "^2.10.0"
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "@chainlink/contracts": "^0.4.1",
-    "@openzeppelin/contracts": "^4.7.0",
-    "@openzeppelin/subgraphs": "^0.1.8-5"
-=======
     "@headlessui/react": "^1.6.6",
     "@heroicons/react": "^1.0.6",
     "next": "12.2.1",
@@ -29,6 +26,5 @@
     "postcss": "^8.4.14",
     "tailwindcss": "^3.1.5",
     "typescript": "4.7.4"
->>>>>>> main
   }
 }
