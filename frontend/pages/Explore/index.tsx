@@ -17,24 +17,67 @@ const products = [
     },
     modalInfo: {
       Title: 'Verci DAO',
+      Slogan: 'Come vibe with us',
       Description: 'Place for people to chill and hang out',
-      Details: 'Valid for 2 years starting August 10th 2022',
+      Details: {
+        first: 'Valid for 2 years starting August 10th 2022',
+      },
+      Perks: {
+        first: 'Event entries around the world',
+      },
+      History: {
+        first: 'Started by dropouts',
+      },
     },
   },
   {
     id: 2,
     cardInfo: {
-      name: 'Yacht DAO',
+      name: 'Racing DAO',
       href: '#',
-      imageSrc: 'fakenft.png',
+      imageSrc: 'racer.png',
       imageAlt: 'Fake NFT boi',
-      price: '$420',
+      price: '$500',
       color: 'Blue',
     },
     modalInfo: {
-      Title: 'Yacht DAO',
-      Description: 'Party on the 3AC Yacht with your homies',
-      Details: 'Valid for 1 year starting January 1st 2023',
+      Title: 'Racing DAO',
+      Slogan: 'Fulfill your need for speed',
+      Description: 'Go to racing events with your frens',
+      Details: {
+        first: 'Valid for 1 year starting January 1st 2023',
+      },
+      Perks: {
+        first: 'Race around the world',
+      },
+      History: {
+        first: 'Started by F1 Drivers',
+      },
+    },
+  },
+  {
+    id: 3,
+    cardInfo: {
+      name: 'Gorls Club',
+      href: '#',
+      imageSrc: 'gorls.png',
+      imageAlt: 'Fake NFT boi',
+      price: '$1,000',
+      color: 'Blue',
+    },
+    modalInfo: {
+      Title: 'Gorls DAO',
+      Slogan: 'Touch grass bro',
+      Description: 'Meet gorls',
+      Details: {
+        first: 'Valid for 5 years starting January 1st 2023',
+      },
+      Perks: {
+        first: 'Meet gorls around the world',
+      },
+      History: {
+        first: 'Started by gorls',
+      },
     },
   },
   // More Subs...
