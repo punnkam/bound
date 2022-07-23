@@ -40,3 +40,5 @@ export default function CustomModal({ modalInfo, toggleModal, cardInfo }: any) {
     </div>
   );
 }
+
+//testing
