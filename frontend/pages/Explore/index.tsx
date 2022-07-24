@@ -20,12 +20,15 @@ const products = [
       Slogan: 'Come vibe with us',
       Description: 'Place for people to chill and hang out',
       Details: {
+        imageSrc: 'fakenft.png',
         first: 'Valid for 2 years starting August 10th 2022',
       },
       Perks: {
+        imageSrc: 'fakenft.png',
         first: 'Event entries around the world',
       },
       History: {
+        imageSrc: 'fakenft.png',
         first: 'Started by dropouts',
       },
     },
@@ -45,12 +48,15 @@ const products = [
       Slogan: 'Fulfill your need for speed',
       Description: 'Go to racing events with your frens',
       Details: {
+        imageSrc: 'racer.png',
         first: 'Valid for 1 year starting January 1st 2023',
       },
       Perks: {
+        imageSrc: 'racer.png',
         first: 'Race around the world',
       },
       History: {
+        imageSrc: 'racer.png',
         first: 'Started by F1 Drivers',
       },
     },
@@ -70,12 +76,15 @@ const products = [
       Slogan: 'Touch grass bro',
       Description: 'Meet gorls',
       Details: {
+        imageSrc: 'gorls.png',
         first: 'Valid for 5 years starting January 1st 2023',
       },
       Perks: {
+        imageSrc: 'gorls.png',
         first: 'Meet gorls around the world',
       },
       History: {
+        imageSrc: 'gorls.png',
         first: 'Started by gorls',
       },
     },

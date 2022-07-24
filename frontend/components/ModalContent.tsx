@@ -68,7 +68,7 @@ export default function ModalContent({ modalInfo, cardInfo }: any) {
         </Grid>
         <Grid sm={12} md={7}>
           <Card css={{ mw: '400px', dropShadow: 'none', border: 'none' }}>
-            <Button.Group color='primary' ghost>
+            <Button.Group color='primary' ghost css={{ jc: 'center' }}>
               <Button onClick={() => setModalPage(modalPageEnum.PERKS)}>
                 Perks
               </Button>
@@ -79,19 +79,47 @@ export default function ModalContent({ modalInfo, cardInfo }: any) {
                 History
               </Button>
             </Button.Group>
-            <Grid.Container gap={3}>
-              <Grid.Container css={{ fd: 'column' }} gap={4}>
-                <Grid xs={10}>
-                  <Card.Image
-                    src={cardInfo.imageSrc}
-                    objectFit='cover'
-                    width='100%'
-                    height={80}
-                    alt='Card image background'
-                  />
-                </Grid>
-                <Grid>{page}</Grid>
-              </Grid.Container>
+            <Grid.Container gap={6}>
+              <Card css={{ border: 'none', shadow: 'none' }}>
+                <Grid.Container gap={3} css={{ fd: 'row' }}>
+                  <Grid xs={5}>
+                    <Card.Image
+                      src={modalInfo.Perks.imageSrc}
+                      width='100%'
+                      height={70}
+                      alt='Card image background'
+                      css={{ ml: 'none' }}
+                    />
+                  </Grid>
+                  <Grid></Grid>
+                </Grid.Container>
+              </Card>
+              <Card css={{ border: 'none', shadow: 'none' }}>
+                <Grid.Container gap={3} css={{ fd: 'column' }}>
+                  <Grid xs={5}>
+                    <Card.Image
+                      src={modalInfo.Details.imageSrc}
+                      width='100%'
+                      height={70}
+                      alt='Card image background'
+                      css={{ ml: 'none' }}
+                    />
+                  </Grid>
+                </Grid.Container>
+              </Card>
+              <Card css={{ border: 'none', shadow: 'none' }}>
+                <Grid.Container gap={3} css={{ fd: 'column' }}>
+                  <Grid xs={5}>
+                    <Card.Image
+                      src={modalInfo.History.imageSrc}
+                      width='100%'
+                      height={70}
+                      alt='Card image background'
+                      css={{ ml: 'none' }}
+                    />
+                  </Grid>
+                </Grid.Container>
+              </Card>
             </Grid.Container>
           </Card>
         </Grid>
