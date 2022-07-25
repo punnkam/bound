@@ -121,6 +121,7 @@ export default function ModalDetailNew({ modalInfo, cardInfo }: any) {
               objectFit='cover'
               width='5rem'
               height='5rem'
+              alt={''}
               css={{ borderRadius: '0.5rem', positive: 'relative' }}
             />
             <Box width='xs'>
@@ -133,6 +134,7 @@ export default function ModalDetailNew({ modalInfo, cardInfo }: any) {
               objectFit='cover'
               width='5rem'
               height='5rem'
+              alt={''}
               css={{ borderRadius: '0.5rem', positive: 'relative' }}
             />
             <Box width='xs'>
@@ -145,6 +147,7 @@ export default function ModalDetailNew({ modalInfo, cardInfo }: any) {
               objectFit='cover'
               width='5rem'
               height='5rem'
+              alt={''}
               css={{ borderRadius: '0.5rem', positive: 'relative' }}
             />
             <Box width='xs'>

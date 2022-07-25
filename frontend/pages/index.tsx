@@ -19,7 +19,7 @@ export default function Landing() {
     <div>
       <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
         <Flex direction={'column'} justifyContent={'space-between'}>
-          <Image src='Logo.svg' boxSize='40px' margin={'1rem'} />
+          <Image src='Logo.svg' boxSize='40px' margin={'1rem'} alt={''} />
 
           <Flex direction={'row'} margin={'1rem'}>
             <Tabs variant='soft-rounded' colorScheme='yellow'>
