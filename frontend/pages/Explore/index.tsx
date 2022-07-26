@@ -5,7 +5,7 @@ import React from 'react';
 import Modal from '../../components/CustomModal';
 
 import { Box, SimpleGrid, Flex, Heading } from '@chakra-ui/react';
-import { NftCard1, products } from '../../components/NftCard1';
+import { NftCard1 } from '../../components/NftCard1';
 
 import Layout from '../../components/Layout';
 
@@ -17,8 +17,12 @@ const products = [
       href: '#',
       imageSrc: 'fakenft.png',
       imageAlt: 'Fake NFT boi',
-      price: '$69',
-      color: 'Black',
+      price: 0.2,
+      creator: 'Verci',
+      recur: 'Yr',
+      share: 1,
+      sold: 10,
+      supply: 500,
     },
     modalInfo: {
       Title: 'Verci DAO',
@@ -71,12 +75,16 @@ const products = [
   {
     id: 2,
     cardInfo: {
-      name: 'Racing DAO',
+      name: 'Killa Killa',
       href: '#',
       imageSrc: 'racer.png',
       imageAlt: 'Fake NFT boi',
-      price: '$500',
-      color: 'Blue',
+      price: 0.2,
+      creator: 'Racing DAO',
+      recur: 'Yr',
+      share: 2,
+      sold: 10,
+      supply: 500,
     },
     modalInfo: {
       Title: 'Racing DAO',
@@ -133,8 +141,12 @@ const products = [
       href: '#',
       imageSrc: 'gorls.png',
       imageAlt: 'Fake NFT boi',
-      price: '$1,000',
-      color: 'Blue',
+      price: 0.2,
+      creator: 'Gorls',
+      recur: 'Yr',
+      share: 2,
+      sold: 10,
+      supply: 500,
     },
     modalInfo: {
       Title: 'Gorls DAO',
@@ -187,15 +199,14 @@ const products = [
   // More Subs...
 ];
 
-
 export const Explore = () => (
-  <Flex direction="column">
+  <Flex direction='column'>
     <Flex ml={200}>
       <Heading>Explore Subscriptions</Heading>
     </Flex>
     <Box
       // contains the grid of cards
-      maxW="5xl"
+      maxW='5xl'
       ml={200}
       mt={105}
       // px={{ base: '4', md: '8', lg: '12' }}
