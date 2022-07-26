@@ -1,41 +1,49 @@
+// import {
+//   Modal,
+//   Button,
+//   Text,
+//   Input,
+//   Row,
+//   Checkbox,
+//   Card,
+//   Grid,
+// } from '@nextui-org/react';
 import {
   Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
   Button,
-  Text,
-  Input,
-  Row,
-  Checkbox,
-  Card,
-  Grid,
-} from '@nextui-org/react';
-import ModalContent from './ModalContent';
+} from '@chakra-ui/react';
+import ModalDetailNew from './ModalDetailNew';
 
-export default function CustomModal({ modalInfo, toggleModal, cardInfo }: any) {
+export default function CustomModal({
+  modalInfo,
+  toggleModal,
+  cardInfo,
+  isOpen,
+}: any) {
   return (
     <div>
-      <Modal
-        aria-labelledby='modal-title'
-        onClose={toggleModal}
-        open={true}
-        width='50rem'
-        scroll={false}
-      >
-        <Modal.Header>
-          <Text id='modal-title' size={26}>
-            {modalInfo.Title}
-          </Text>
-        </Modal.Header>
-        <Modal.Body>
-          <ModalContent modalInfo={modalInfo} cardInfo={cardInfo} />
-        </Modal.Body>
-        <Modal.Footer>
-          <Button auto flat onClick={toggleModal}>
-            Close
-          </Button>
-          <Button auto onClick={toggleModal}>
-            Purchase
-          </Button>
-        </Modal.Footer>
+      <Modal size='4xl' isOpen={isOpen} onClose={toggleModal}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader> {modalInfo.Title}</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <ModalDetailNew modalInfo={modalInfo} cardInfo={cardInfo} />
+          </ModalBody>
+
+          <ModalFooter>
+            <Button variant='ghost' mr={3} onClick={toggleModal}>
+              Close
+            </Button>
+            <Button colorScheme='blue'>Purchase</Button>
+          </ModalFooter>
+        </ModalContent>
       </Modal>
     </div>
   );

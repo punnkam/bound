@@ -3,8 +3,190 @@
 
 import React from 'react';
 import Modal from '../../components/CustomModal';
+
 import { Box, SimpleGrid, Flex, Heading } from '@chakra-ui/react';
 import { NftCard1, products } from '../../components/NftCard1';
+
+import Layout from '../../components/Layout';
+
+const products = [
+  {
+    id: 1,
+    cardInfo: {
+      name: 'Verci DAO',
+      href: '#',
+      imageSrc: 'fakenft.png',
+      imageAlt: 'Fake NFT boi',
+      price: '$69',
+      color: 'Black',
+    },
+    modalInfo: {
+      Title: 'Verci DAO',
+      Slogan: 'Come vibe with us',
+      Description: 'Place for people to chill and hang out',
+      Details: {
+        first: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          imageSrc: 'time.png',
+        },
+        second: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          imageSrc: 'time.png',
+        },
+        third: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          imageSrc: 'time.png',
+        },
+      },
+      Perks: {
+        first: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          imageSrc: 'time.png',
+        },
+        second: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          imageSrc: 'time.png',
+        },
+        third: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          imageSrc: 'time.png',
+        },
+      },
+      History: {
+        first: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          imageSrc: 'time.png',
+        },
+        second: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          imageSrc: 'time.png',
+        },
+        third: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          imageSrc: 'time.png',
+        },
+      },
+    },
+  },
+  {
+    id: 2,
+    cardInfo: {
+      name: 'Racing DAO',
+      href: '#',
+      imageSrc: 'racer.png',
+      imageAlt: 'Fake NFT boi',
+      price: '$500',
+      color: 'Blue',
+    },
+    modalInfo: {
+      Title: 'Racing DAO',
+      Slogan: 'Fulfill your need for speed',
+      Description: 'Go to racing events with your frens',
+      Details: {
+        first: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          imageSrc: 'racerdao/time.png',
+        },
+        second: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          imageSrc: 'racerdao/clubs.png',
+        },
+        third: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          imageSrc: 'racerdao/docs.png',
+        },
+      },
+      Perks: {
+        first: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          imageSrc: 'racerdao/f1.png',
+        },
+        second: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          imageSrc: 'racerdao/lewis.png',
+        },
+        third: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          imageSrc: 'racerdao/drive-f1.png',
+        },
+      },
+      History: {
+        first: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          imageSrc: 'racerdao/f1history.png',
+        },
+        second: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          imageSrc: 'racerdao/abudabi.png',
+        },
+        third: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          imageSrc: 'racerdao/daohistory.png',
+        },
+      },
+    },
+  },
+  {
+    id: 3,
+    cardInfo: {
+      name: 'Gorls Club',
+      href: '#',
+      imageSrc: 'gorls.png',
+      imageAlt: 'Fake NFT boi',
+      price: '$1,000',
+      color: 'Blue',
+    },
+    modalInfo: {
+      Title: 'Gorls DAO',
+      Slogan: 'Touch grass bro',
+      Description: 'Meet gorls',
+      Details: {
+        first: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          imageSrc: 'time.png',
+        },
+        second: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          imageSrc: 'time.png',
+        },
+        third: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          imageSrc: 'time.png',
+        },
+      },
+      Perks: {
+        first: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          imageSrc: 'time.png',
+        },
+        second: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          imageSrc: 'time.png',
+        },
+        third: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          imageSrc: 'time.png',
+        },
+      },
+      History: {
+        first: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          imageSrc: 'time.png',
+        },
+        second: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          imageSrc: 'time.png',
+        },
+        third: {
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          imageSrc: 'time.png',
+        },
+      },
+    },
+  },
+  // More Subs...
+];
+
 
 export const Explore = () => (
   <Flex direction="column">
