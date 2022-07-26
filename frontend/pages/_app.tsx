@@ -36,7 +36,6 @@ const wagmiClient = createClient({
   provider
 })
 
-
 /// wrapping component with our layout from Layout.tsx
 /// in between is the children from Layout.tsx
 function MyApp({ Component, pageProps }: AppProps) {
