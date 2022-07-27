@@ -12,7 +12,6 @@ import {
 } from '@chakra-ui/react';
 
 import { Card, Row, Col } from '@nextui-org/react';
-
 import { useState } from 'react';
 
 enum modalPageEnum {
@@ -58,7 +57,7 @@ export default function ModalDetailNew({ modalInfo, cardInfo }: any) {
 
   return (
     <Stack
-      direction='row'
+      direction="row"
       css={{ borderRadius: '0.5rem', paddingLeft: '0.5rem' }}
     >
       <Box>
@@ -73,10 +72,10 @@ export default function ModalDetailNew({ modalInfo, cardInfo }: any) {
         <Card>
           <Card.Image
             src={cardInfo.imageSrc}
-            objectFit='cover'
+            objectFit="cover"
             width={300}
             height={360}
-            alt='Card image background'
+            alt="Card image background"
           />
           <Card.Footer
             isBlurred
@@ -90,17 +89,17 @@ export default function ModalDetailNew({ modalInfo, cardInfo }: any) {
           >
             <Row>
               <Col>
-                <Text color='#000'>{cardInfo.name}</Text>
-                <Text color='grey'>{cardInfo.price}</Text>
+                <Text color="#000">{cardInfo.name}</Text>
+                <Text color="grey">{cardInfo.price}</Text>
               </Col>
             </Row>
           </Card.Footer>
         </Card>
       </Box>
-      <Box height='inherit' width='inherit'>
+      <Box height="inherit" width="inherit">
         <VStack
-          direction='column'
-          justify='start'
+          direction="column"
+          justify="start"
           spacing={6}
           css={{ paddingLeft: '1rem' }}
         >
@@ -115,42 +114,42 @@ export default function ModalDetailNew({ modalInfo, cardInfo }: any) {
               </Tab>
             </TabList>
           </Tabs>
-          <Stack direction='row' spacing={5}>
+          <Stack direction="row" spacing={5}>
             <Image
               src={img1}
-              objectFit='cover'
-              width='5rem'
-              height='5rem'
+              objectFit="cover"
+              width="5rem"
+              height="5rem"
               alt={''}
               css={{ borderRadius: '0.5rem', positive: 'relative' }}
             />
-            <Box width='xs'>
+            <Box width="xs">
               <Text>{list1}</Text>
             </Box>
           </Stack>
-          <Stack direction='row' spacing={5}>
+          <Stack direction="row" spacing={5}>
             <Image
               src={img2}
-              objectFit='cover'
-              width='5rem'
-              height='5rem'
+              objectFit="cover"
+              width="5rem"
+              height="5rem"
               alt={''}
               css={{ borderRadius: '0.5rem', positive: 'relative' }}
             />
-            <Box width='xs'>
+            <Box width="xs">
               <Text>{list2}</Text>
             </Box>
           </Stack>
-          <Stack direction='row' spacing={5}>
+          <Stack direction="row" spacing={5}>
             <Image
               src={img3}
-              objectFit='cover'
-              width='5rem'
-              height='5rem'
+              objectFit="cover"
+              width="5rem"
+              height="5rem"
               alt={''}
               css={{ borderRadius: '0.5rem', positive: 'relative' }}
             />
-            <Box width='xs'>
+            <Box width="xs">
               <Text>{list3}</Text>
             </Box>
           </Stack>

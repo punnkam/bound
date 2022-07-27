@@ -11,7 +11,6 @@ import {
   Wrap,
   
 } from '@chakra-ui/react';
-import SideBarItem from './SideBarItem';
 import {
   BiDotsHorizontal,
   BiGridAlt,
@@ -19,7 +18,6 @@ import {
   BiHomeAlt,
   BiCompass,
 } from 'react-icons/bi';
-import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 export const navigation = [
   {
