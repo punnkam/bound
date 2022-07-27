@@ -1,5 +1,6 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
+import Layout from '../components/Layout';
 import '@rainbow-me/rainbowkit/styles.css';
 import { ChakraProvider } from '@chakra-ui/react';
 import theme from '../styles/theme';
@@ -21,9 +22,8 @@ const { connectors } = getDefaultWallets({
 const wagmiClient = createClient({
   autoConnect: true,
   connectors,
-
-  provider
-})
+  provider,
+});
 
 /// wrapping component with our layout from Layout.tsx
 /// in between is the children from Layout.tsx
@@ -32,7 +32,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     <WagmiConfig client={wagmiClient}>
       <RainbowKitProvider chains={chains}>
         <ChakraProvider theme={theme}>
-          <Component {...pageProps} />
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
         </ChakraProvider>
       </RainbowKitProvider>
     </WagmiConfig>
