@@ -4,6 +4,8 @@ import { Box, SimpleGrid, Flex, Heading } from '@chakra-ui/react';
 import { GalleryCard } from '../../components/GalleryCard';
 import Layout from '../../components/Layout';
 
+//yo 
+
 export const products = [
   {
     id: 1,
