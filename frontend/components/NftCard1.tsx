@@ -4,21 +4,15 @@
 import React from 'react';
 import Modal from './CustomModal';
 import {
-  Box,
-  SimpleGrid,
   Flex,
-  Heading,
   Image,
   Button,
   Text,
   Skeleton,
-  AspectRatio,
   Stack,
-  Link,
   HStack,
   VStack,
 } from '@chakra-ui/react';
-import { Spacer } from '@nextui-org/react';
 
 export const products = [
   {
@@ -179,9 +173,9 @@ export function NftCard1(props: Props) {
                 <Text>
                   #{product.cardInfo.sold} | {product.cardInfo.supply}
                 </Text>
-                <Button fontWeight="bold" color="white" bg="#1D2C2F" size='sm'>
+                {/* <Button fontWeight="bold" color="white" bg="#1D2C2F" size="sm">
                   {product.cardInfo.price} | {product.cardInfo.recur}
-                </Button>
+                </Button> */}
               </VStack>
             </HStack>
           </VStack>

@@ -2,7 +2,7 @@
 // https://github.com/tailwindlabs/tailwindcss-aspect-ratio
 
 import React from 'react';
-import Modal from '../../components/CustomModal';
+// import Modal from '../../components/CustomModal';
 import { Box, SimpleGrid, Flex, Heading } from '@chakra-ui/react';
 import { NftCard1, products } from '../../components/NftCard1';
 
