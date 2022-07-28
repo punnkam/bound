@@ -114,7 +114,7 @@ interface Props {
   product: Product;
 }
 
-export function NftCard1(props: Props) {
+export function NftCard(props: Props) {
   const { product } = props;
 
   const [showModal, setShowModal] = React.useState(false);

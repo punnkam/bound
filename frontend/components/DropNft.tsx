@@ -12,7 +12,7 @@ import {
 import React from 'react';
 import { FiUploadCloud } from 'react-icons/fi';
 
-export const Dropzone = (props: CenterProps) => (
+export const DropNft = (props: CenterProps) => (
   <Center
     borderWidth="1px"
     borderRadius="xl"
