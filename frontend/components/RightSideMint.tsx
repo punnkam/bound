@@ -1,29 +1,20 @@
 import {
   Box,
-  Container,
   FormControl,
   FormLabel,
-  HStack,
-  Flex,
   Heading,
-  VStack,
-  SimpleGrid,
   Input,
-  Stack,
   Select,
-  ButtonGroup,
-  Button,
-  Spacer,
   Text,
-  Center
+  Center,
 } from '@chakra-ui/react';
 import * as React from 'react';
 import { DropImage } from './DropImage';
-import { BiPlusCircle } from 'react-icons/bi';
+import { BiListPlus } from 'react-icons/bi';
 
 export default function RightSideMint() {
   return (
-    <Box overflowY="scroll" maxH={519}>
+    <Box overflowY="scroll" maxH={580} width={1000}>
       <FormControl id="file">
         <FormLabel fontWeight="semibold">Upload Images</FormLabel>
         <Text>Further describe the NFT</Text>
@@ -37,7 +28,7 @@ export default function RightSideMint() {
           Details
         </FormLabel>
         <Input
-          placeholder="e.g. The Cool Group"
+          placeholder="Describe what this NFT/SBT is about"
           bg="#FEFFFE"
           borderColor="#D3D3D3"
         />
@@ -71,14 +62,14 @@ export default function RightSideMint() {
           // width={150}
         />
       </FormControl>
-      <Center mt='10'>
-        <BiPlusCircle size={40} color="#1A202C"  />
+      <Center mt={5}>
+        <BiListPlus size={40} color="#1A202C" />
       </Center>
     </Box>
   );
 }
 
-// to do:
+// to do in future:
 // 1. Create RightSideMintDescription.tsx
 // 2. Copy paste code into the file
-// 3. Make it so if you click on the plus sign, it will add a new RightSideMintDescription.tsx to the VStack (Box)
+// 3. Make it so if you click on the plus sign (Button), it will add a new RightSideMintDescription.tsx to the VStack (Box)

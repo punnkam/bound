@@ -1,15 +1,10 @@
 import {
-  Button,
   Center,
   CenterProps,
   HStack,
   Icon,
   LinkOverlay,
-  Spacer,
   Square,
-  Text,
-  useColorModeValue,
-  VStack,
   LinkBox,
 } from '@chakra-ui/react';
 import Link from 'next/link';

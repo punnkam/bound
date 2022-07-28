@@ -1,26 +1,13 @@
 import {
   Box,
-  Container,
   FormControl,
   FormLabel,
   HStack,
-  Flex,
   Heading,
   VStack,
-  SimpleGrid,
   Input,
-  Stack,
   Select,
-  ButtonGroup,
-  Button,
-  Spacer,
   Text,
-  useDisclosure,
-  Tab,
-  Tabs,
-  TabList,
-  TabPanels,
-  TabPanel,
 } from '@chakra-ui/react';
 import * as React from 'react';
 import { DropNft } from './DropNft';
@@ -41,7 +28,7 @@ export default function LeftSideMint() {
             Subscription Details
           </Heading>
 
-          <FormLabel mt={5} fontWeight="semibold">
+          <FormLabel mt={1} fontWeight="semibold">
             Title
           </FormLabel>
           <Input

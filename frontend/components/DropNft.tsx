@@ -6,7 +6,6 @@ import {
   Icon,
   Square,
   Text,
-  useColorModeValue,
   VStack,
 } from '@chakra-ui/react';
 import React from 'react';
