@@ -14,6 +14,7 @@ import { DropNft } from './DropNft';
 import { RecurringButton } from './RecurringButton';
 
 export default function LeftSideMint() {
+ 
   return (
     <Box>
       <Box>
@@ -37,21 +38,30 @@ export default function LeftSideMint() {
             borderColor="#D3D3D3"
           />
         </FormControl>
-        <FormControl isRequired>
-          <FormLabel mt={5} fontWeight="semibold">
-            NFT Share
-          </FormLabel>
-          <Select
-            placeholder="# people NFT owner shares with"
-            bg="#FEFFFE"
-            borderColor="#D3D3D3"
-            color="#9BA3AF"
-          >
-            <option value="option1">+ 1</option>
-            <option value="option2">+ 2</option>
-            <option value="option3">+ 3</option>
-          </Select>
-        </FormControl>
+        <HStack>
+          <FormControl isRequired width="50%">
+            <FormLabel mt={5} fontWeight="semibold">
+              NFT Share
+            </FormLabel>
+            <Select
+              // placeholder="# people you share with"
+              placeholder="Feature coming soon!"
+              bg="#FEFFFE"
+              borderColor="#D3D3D3"
+              color="#9BA3AF"
+            >
+              {/* <option value="option1">+ 1</option>
+              <option value="option2">+ 2</option>
+              <option value="option3">+ 3</option> */}
+            </Select>
+          </FormControl>
+          <FormControl isRequired width="50%">
+            <FormLabel mt={5} fontWeight="semibold">
+              Supply
+            </FormLabel>
+            <Input placeholder="ETH" bg="#FEFFFE" borderColor="#D3D3D3" />
+          </FormControl>
+        </HStack>
         <HStack>
           <FormControl isRequired>
             <FormLabel mt={5} fontWeight="semibold">
@@ -70,7 +80,6 @@ export default function LeftSideMint() {
               <FormLabel mt={5} fontWeight="semibold">
                 Every
               </FormLabel>
-
               <RecurringButton />
             </FormControl>
           </VStack>

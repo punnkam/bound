@@ -24,17 +24,12 @@ function RadioCard(props: any) {
         _checked={{
           boxShadow: '0 0 1px 2px #FECD5B',
         }}
-        // cursor="pointer"
-        // _focus={{
-        //   boxShadow: 'outline',
-        // }}
       >
         {props.children}
       </Box>
     </Box>
   );
 }
-
 
 // Step 2: Use the `useRadioGroup` hook to control a group of custom radios.
 export function RecurringButton() {
@@ -61,4 +56,3 @@ export function RecurringButton() {
     </HStack>
   );
 }
-

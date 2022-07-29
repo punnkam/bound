@@ -7,64 +7,67 @@ import {
   Select,
   Text,
   Center,
+  Wrap,
+  Flex,
+  Stack,
+  Button,
+  HStack,
 } from '@chakra-ui/react';
 import * as React from 'react';
 import { DropImage } from './DropImage';
-import { BiListPlus } from 'react-icons/bi';
+import { BiLayerPlus } from 'react-icons/bi';
+import ModalRequirementMint from './ModalRequirementMint';
+import ModalDescriptionMint from './ModalDescriptionMint';
+import ModalPerkMint from './ModalPerkMint';
 
 export default function RightSideMint() {
   return (
-    <Box overflowY="scroll" maxH={580} width={1000}>
+    <Box maxH={590} width="auto">
       <FormControl id="file">
         <FormLabel fontWeight="semibold">Upload Images</FormLabel>
         <Text>Further describe the NFT</Text>
         <DropImage />
       </FormControl>
-      <FormControl isRequired>
-        <Heading size="xs" mt={5} fontWeight="normal">
-          Description
-        </Heading>
-        <FormLabel mt={1} fontWeight="semibold">
-          Details
-        </FormLabel>
-        <Input
-          placeholder="Describe what this NFT/SBT is about"
-          bg="#FEFFFE"
-          borderColor="#D3D3D3"
-        />
-      </FormControl>
-      <FormControl isRequired>
-        <Heading size="xs" mt={5} fontWeight="normal">
-          Perks
-        </Heading>
-        <FormLabel mt={1} fontWeight="semibold">
-          Name
-        </FormLabel>
-        <Select
-          placeholder="# people NFT owner shares with"
-          bg="#FEFFFE"
-          borderColor="#D3D3D3"
-          color="#9BA3AF"
-        >
-          <option value="option1">+ 1</option>
-          <option value="option2">+ 2</option>
-          <option value="option3">+ 3</option>
-        </Select>
-      </FormControl>
-      <FormControl isRequired>
-        <FormLabel mt={5} fontWeight="semibold">
-          Description
-        </FormLabel>
-        <Input
-          placeholder="Describe the new perk of receiving this NFT/SBT"
-          bg="#FEFFFE"
-          borderColor="#D3D3D3"
-          // width={150}
-        />
-      </FormControl>
-      <Center mt={5}>
-        <BiListPlus size={40} color="#1A202C" />
-      </Center>
+
+      <Stack mt={5} spacing={5}>
+        <ModalRequirementMint />
+        <ModalDescriptionMint />
+        <ModalPerkMint />
+      </Stack>
+
+      <HStack mt={1}>
+        <Center>
+          <Button
+            backgroundColor="#1A202C"
+            color="white"
+            width={275}
+            size="md"
+            borderRadius="lg"
+            mt={15}
+            fontSize="xl"
+            variant="outline"
+          >
+            <Box mx={1}>
+              <BiLayerPlus size={25} />
+            </Box>
+            Add an SBT
+          </Button>
+        </Center>
+        <Center>
+          <Button
+            backgroundColor="#FDB251"
+            color="white"
+            width={200}
+            size="md"
+            borderRadius="lg"
+            mt={15}
+            fontSize="xl"
+            variant="outline"
+          >
+            Mint Collection
+          </Button>
+        </Center>
+      </HStack>
     </Box>
   );
 }

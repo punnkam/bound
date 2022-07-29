@@ -25,22 +25,8 @@ export default function Mining() {
         spacing={8}
       >
         <LeftSideMint />
-        <HStack>
-          <RightSideMint />
-        </HStack>
+        <RightSideMint />
       </SimpleGrid>
-
-      <Center mt="0">
-        <Button
-          backgroundColor="#FDB251"
-          color="white"
-          width={200}
-          size="lg"
-          borderRadius="xl"
-        >
-          Mint
-        </Button>
-      </Center>
     </Box>
   );
 }
