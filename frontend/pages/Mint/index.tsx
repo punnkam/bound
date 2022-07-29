@@ -22,7 +22,7 @@ export default function Mining() {
         <SimpleGrid
           columns={{ sm: 1, md: 2 }}
           mt={30}
-          mx='auto'
+          mx="auto"
           w={1000}
           spacing={8}
         >
@@ -32,7 +32,7 @@ export default function Mining() {
           </HStack>
         </SimpleGrid>
 
-        <Center mt='0'>
+        {/* <Center mt='0'>
           <Button
             backgroundColor='#FDB251'
             color='white'
@@ -43,7 +43,7 @@ export default function Mining() {
           >
             Mint
           </Button>
-        </Center>
+        </Center> */}
       </Box>
     </Layout>
   );

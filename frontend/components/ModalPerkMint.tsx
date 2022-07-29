@@ -20,10 +20,12 @@ import {
   IconButton,
   Spacer,
   VStack,
+  Textarea,
 } from '@chakra-ui/react';
 import * as React from 'react';
-import { BiStar } from 'react-icons/bi';
+import { BiStar, BiPlus } from 'react-icons/bi';
 import { FiPlusSquare } from 'react-icons/fi';
+import PerkForm from './PerkForm';
 
 export default function ModalPerkMint() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -56,14 +58,24 @@ export default function ModalPerkMint() {
           color="#FDB251"
         />
 
-        <Modal closeOnOverlayClick={false} isOpen={isOpen} onClose={onClose}>
+        <Modal
+          closeOnOverlayClick={false}
+          isOpen={isOpen}
+          onClose={onClose}
+          scrollBehavior={'inside'}
+        >
           <ModalOverlay />
-          <ModalContent>
-            <ModalHeader>Create your account</ModalHeader>
+          <ModalContent h="600px" maxW="800px">
+            <ModalHeader>Perks</ModalHeader>
+            <ModalBody>
+              <PerkForm />
+            </ModalBody>
             <ModalCloseButton />
-            <ModalBody pb={6}>{/* <Lorem count={2} /> */}</ModalBody>
 
             <ModalFooter>
+              {/* <Button leftIcon={<BiPlus size={20} />}>Add Another Perk</Button>
+              <Spacer /> */}
+
               <Button colorScheme="blue" mr={3}>
                 Save
               </Button>

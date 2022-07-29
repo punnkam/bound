@@ -24,7 +24,7 @@ export function GalleryCard(props: any) {
 
   return (
     <Stack>
-      <Flex direction='column' align='center'>
+      <Flex direction="column" align="center">
         <Button
           key={product.id}
           minW={'314px'}
@@ -37,42 +37,42 @@ export function GalleryCard(props: any) {
             setShowModal(true);
           }}
         >
-          <VStack spacing='0px'>
+          <VStack spacing="0px">
             <Image
               src={product.cardInfo.imageSrc}
               alt={product.cardInfo.name}
-              draggable='false'
+              draggable="false"
               fallback={<Skeleton />}
-              objectFit='cover'
+              objectFit="cover"
               minW={'314px'}
               minH={'314px'}
               maxW={'314px'}
               maxH={'314px'}
-              borderTopRadius='xl'
+              borderTopRadius="xl"
             />
             <HStack
               // justifyContent="space-between"
-              bg='#FEFFFE'
+              bg="#FEFFFE"
               minW={'314px'}
               minH={'115px'}
-              borderBottomRadius='xl'
-              spacing='24'
-              justify='center'
+              borderBottomRadius="xl"
+              spacing="24"
+              justify="center"
             >
-              <VStack spacing='8px' align='flex-start'>
-                <Text color='gray'>{product.cardInfo.creator}</Text>
-                <Text fontSize='lg' fontWeight='bold'>
+              <VStack spacing="8px" align="flex-start">
+                <Text color="gray">{product.cardInfo.creator}</Text>
+                <Text fontSize="lg" fontWeight="bold">
                   {product.cardInfo.name}
                 </Text>
-                <Text as='i'>SBT Share +{product.cardInfo.share}</Text>
+                <Text as="i">SBT Share +{product.cardInfo.share}</Text>
               </VStack>
-              <VStack spacing='20px' align='flex-end'>
+              <VStack spacing="20px" align="flex-end">
                 <Text>
                   #{product.cardInfo.sold} | {product.cardInfo.supply}
                 </Text>
-                {/* <Button fontWeight="bold" color="white" bg="#1D2C2F" size="sm">
+                <Text fontWeight="bold" color="white" bg="#1D2C2F" size="sm" p={2} borderRadius='md'>
                   {product.cardInfo.price} | {product.cardInfo.recur}
-                </Button> */}
+                </Text>
               </VStack>
             </HStack>
           </VStack>

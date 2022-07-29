@@ -14,7 +14,6 @@ import { DropNft } from './DropNft';
 import { RecurringButton } from './RecurringButton';
 
 export default function LeftSideMint() {
- 
   return (
     <Box>
       <Box>

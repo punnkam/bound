@@ -20,6 +20,7 @@ import {
   IconButton,
   Spacer,
   VStack,
+  Textarea,
 } from '@chakra-ui/react';
 import * as React from 'react';
 import { BiEditAlt } from 'react-icons/bi';
@@ -27,6 +28,7 @@ import { FiPlusSquare } from 'react-icons/fi';
 
 export default function ModalDescriptionMint() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [resize, setResize] = React.useState('none');
 
   return (
     <>
@@ -58,10 +60,29 @@ export default function ModalDescriptionMint() {
 
         <Modal closeOnOverlayClick={false} isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
-          <ModalContent>
-            <ModalHeader>Create your account</ModalHeader>
+          <ModalContent h="600px" maxW="800px">
+            <ModalHeader>Description</ModalHeader>
+            <ModalBody>
+              <VStack spacing={5}>
+                <FormControl isRequired>
+                  <FormLabel mt={5} fontWeight="semibold">
+                    Details
+                  </FormLabel>
+                  <Box>
+                    <Textarea
+                      size="lg"
+                      resize="none"
+                      h={400}
+                      placeholder="Feel free to include links and further information - Markdown syntax is supported"
+                      bg="#FEFFFE"
+                      borderColor="#D3D3D3"
+                    />
+                  </Box>
+                </FormControl>
+                {/* <Button leftIcon={<FiPlusSquare />}>Add Another Detail</Button> */}
+              </VStack>
+            </ModalBody>
             <ModalCloseButton />
-            <ModalBody pb={6}>{/* <Lorem count={2} /> */}</ModalBody>
 
             <ModalFooter>
               <Button colorScheme="blue" mr={3}>
