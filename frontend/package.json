@@ -19,6 +19,7 @@
     "@rainbow-me/rainbowkit": "^0.4.2",
     "boxicons": "^2.1.2",
     "ethers": "^5.6.9",
+    "feather-icons": "^4.29.0",
     "framer-motion": "^6.5.1",
     "next": "^12.2.1",
     "react": "18.2.0",
