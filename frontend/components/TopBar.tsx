@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import {
   Flex,
   useDisclosure,
@@ -7,6 +8,7 @@ import {
   Button,
   useBreakpointValue,
   Box,
+  Link,
 } from '@chakra-ui/react';
 import { BiDotsHorizontal } from 'react-icons/bi';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
@@ -18,9 +20,11 @@ export default function Sidebar() {
 
   return (
     <Box>
-      <Flex mx={5} mt={35} gap={5} align="center">
-        <Image src="Logo.svg" boxSize="40px" alt="logo" />
-        <Button size="sm" onClick={onToggle}>
+      <Flex mx={5} mt={35} gap={5} align='center'>
+        <Link href='/'>
+          <Image src='Logo.svg' boxSize='40px' alt='logo' />
+        </Link>
+        <Button size='sm' onClick={onToggle}>
           <BiDotsHorizontal size={30} />
         </Button>
         <Spacer />

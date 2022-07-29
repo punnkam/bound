@@ -32,7 +32,6 @@ contract SubFactory is Ownable {
     event CreatedSub(string name, string symbol, uint256 id);
     event ModifiedSub(string name, string symbol, uint256 id);
     event StartedSale(uint256 id, uint256 timestamp);
-    event EndedSale(uint256 id, uint256 timestamp);
 
     modifier inRegistry(address _creator) {
         require(registry[_creator], "This address is not in the registry");
@@ -63,7 +62,7 @@ contract SubFactory is Ownable {
 
     /** User functions */
 
-    // create new subscription
+    // create new sub
     function createSub(
         string memory _name,
         string memory _symbol,
@@ -72,7 +71,7 @@ contract SubFactory is Ownable {
         uint256 _max
     ) external payable inRegistry(msg.sender) returns (uint256) {
         require(msg.value >= fee, "Not enough Ether for fee");
-        require(_interval > 0, "Invalid subscription interval");
+        require(_interval > 0, "Invalid sub interval");
 
         uint256 subId = _subIds.current();
         subNFTs[subId] = new SubNFT(_name, _symbol, _price, _interval, _max);
@@ -82,20 +81,17 @@ contract SubFactory is Ownable {
         return subId;
     }
 
-    // TODO(punnkam): delete existing subscription (non-refundable for now)
+    // TODO(punnkam): delete existing sub (non-refundable for now)
 
-    // modify subscription
+    // modify sub
     function modifySub(
         uint256 _id,
         uint256 _price,
         uint256 _interval,
         uint256 _max
     ) external inRegistry(msg.sender) {
-        require(
-            ownerOfSub[_id] == msg.sender,
-            "You do not own this subscription"
-        );
-        require(_interval > 0, "Invalid subscription interval");
+        require(ownerOfSub[_id] == msg.sender, "You don't own this sub");
+        require(_interval > 0, "Invalid sub interval");
 
         SubNFT subNFT = subNFTs[_id];
         subNFT.adjustParams(_price, _interval, _max);
@@ -104,24 +100,10 @@ contract SubFactory is Ownable {
 
     // start sale
     function startSale(uint256 _id) external inRegistry(msg.sender) {
-        require(
-            ownerOfSub[_id] == msg.sender,
-            "You do not own this subscription"
-        );
+        require(ownerOfSub[_id] == msg.sender, "You don't own this sub");
 
         subNFTs[_id].startSale();
         emit StartedSale(_id, block.timestamp);
-    }
-
-    // end sale
-    function endSale(uint256 _id) external inRegistry(msg.sender) {
-        require(
-            ownerOfSub[_id] == msg.sender,
-            "You do not own this subscription"
-        );
-
-        subNFTs[_id].endSale();
-        emit EndedSale(_id, block.timestamp);
     }
 
     // TODO(punnkam): Send funds to individual creator treasury
