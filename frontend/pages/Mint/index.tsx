@@ -117,7 +117,7 @@ export default function Minting() {
         <SimpleGrid
           columns={{ sm: 1, md: 2 }}
           mt={30}
-          mx='auto'
+          mx="auto"
           w={1000}
           spacing={8}
         >
@@ -166,6 +166,7 @@ export default function Minting() {
             </Text>
           )}
         </Center>
+
       </Box>
     </Layout>
   );

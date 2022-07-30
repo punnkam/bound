@@ -13,6 +13,7 @@ import * as React from 'react';
 import { DropNft } from './DropNft';
 import { RecurringButton } from './RecurringButton';
 
+
 export default function LeftSideMint({
   name,
   setName,
@@ -25,6 +26,7 @@ export default function LeftSideMint({
   max,
   setMax,
 }: any) {
+
   return (
     <Box>
       <Box>
