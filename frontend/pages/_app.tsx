@@ -9,7 +9,7 @@ import {
   getDefaultWallets,
   RainbowKitProvider,
   darkTheme,
-  lightTheme
+  lightTheme,
   connectorsForWallets,
   wallet,
 } from '@rainbow-me/rainbowkit';
