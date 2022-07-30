@@ -18,7 +18,7 @@ import {
   useWaitForTransaction,
 } from 'wagmi';
 import { useEffect, useState } from 'react';
-import factoryAbi from '../../../solidity/artifacts/contracts/SubFactory.sol/SubFactory.json';
+import factoryAbi from '../../abis/SubFactory.json';
 import * as React from 'react';
 import LeftSideMint from '../../components/LeftSideMint';
 import RightSideMint from '../../components/RightSideMint';
