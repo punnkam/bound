@@ -4,20 +4,26 @@ import * as React from 'react';
 // 1. Create a component that consumes the `useRadio` hook
 function RadioCard(props: any) {
   const { getInputProps, getCheckboxProps } = useRadio(props);
+  const { setValue } = props;
 
   const input = getInputProps();
   const checkbox = getCheckboxProps();
 
   return (
-    <Box as="label">
-      <input {...input} />
+    <Box as='label'>
+      <input
+        {...input}
+        onChange={() => {
+          setValue(Number(props.children[0]));
+        }}
+      />
       <Box
         {...checkbox}
-        fontWeight="semibold"
-        borderWidth="1px"
-        borderRadius="md"
-        bg="#FEFFFE"
-        borderColor="#D3D3D3"
+        fontWeight='semibold'
+        borderWidth='1px'
+        borderRadius='md'
+        bg='#FEFFFE'
+        borderColor='#D3D3D3'
         width={115}
         px={5}
         py={2}
@@ -32,7 +38,7 @@ function RadioCard(props: any) {
 }
 
 // Step 2: Use the `useRadioGroup` hook to control a group of custom radios.
-export function RecurringButton() {
+export function RecurringButton({ setValue }: any) {
   const options = ['1 Month', '6 Months', '9 Months'];
 
   const { getRootProps, getRadioProps } = useRadioGroup({
@@ -48,7 +54,7 @@ export function RecurringButton() {
       {options.map((value) => {
         const radio = getRadioProps({ value });
         return (
-          <RadioCard key={value} {...radio}>
+          <RadioCard key={value} {...radio} setValue={setValue}>
             {value}
           </RadioCard>
         );
