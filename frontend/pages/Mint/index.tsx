@@ -56,8 +56,8 @@ export default function Minting() {
     args: [args.name, args.symbol, args.price, args.interval, args.max],
 
     overrides: {
-      gasPrice: 20000000000,
-      gasLimit: 100000,
+      gasPrice: 2000000000,
+      gasLimit: 5000000,
       value: ethers.utils.parseEther('0.1'),
     },
   });
