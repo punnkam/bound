@@ -14,7 +14,7 @@ import {
 import DashModal from './DashModal';
 
 export function DashGalleryCard(props: any) {
-  const { product, width } = props;
+  const { product } = props;
 
   const [showModal, setShowModal] = React.useState(false);
   const [cardInfo, setCardInfo] = React.useState({});
@@ -35,9 +35,9 @@ export function DashGalleryCard(props: any) {
       >
         <Button
           key={product.id}
-          minW={'250px'}
+          minW={'240px'}
           minH={'293px'}
-          maxW={'250px'}
+          maxW={'240px'}
           maxH={'320px'}
           onClick={() => {
             setCardInfo(product.cardInfo);

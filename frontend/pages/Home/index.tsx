@@ -48,11 +48,7 @@ export default function Sidebar() {
         >
           {products.map((product) => (
             <GridItem rowSpan={1} colSpan={1}>
-              <DashGalleryCard
-                key={product.id}
-                product={product}
-                width={'200px'}
-              />
+              <DashGalleryCard key={product.id} product={product} />
             </GridItem>
           ))}
 
