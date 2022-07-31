@@ -14,6 +14,7 @@ import {
   StatLabel,
   StatNumber,
   StatHelpText,
+  SimpleGrid,
   Box,
 } from '@chakra-ui/react';
 import { BiAddToQueue } from 'react-icons/bi';
@@ -23,6 +24,8 @@ import StatTotalSales from '../../components/StatTotalSales';
 import StatTotalSupply from '../../components/StatTotalSupply';
 import StatNumberOwners from '../../components/StatNumberOwners';
 import EventList from '../../components/EventTable';
+import { DashGalleryCard } from '../../components/DashGalleryCard';
+import { products } from '../../components/common/products';
 
 export default function Sidebar() {
   const router = useRouter();
@@ -30,42 +33,48 @@ export default function Sidebar() {
   // insert the gallerycards left of the "add mint button"
   return (
     <Layout>
-      <Flex direction="column">
-        <Flex ml={200}>
-          <Heading>Dashboard</Heading>
+      <Flex direction='column'>
+        <Flex ml={170}>
+          <Heading margin={'1rem'}>Dashboard</Heading>
         </Flex>
         <Grid
           // h="500px"
-          templateRows="repeat(2, 1fr)"
-          templateColumns="repeat(4, 1fr)"
+          templateRows='repeat(2, 1fr)'
+          templateColumns='repeat(4, 1fr)'
           gap={4}
           width={1050}
           height={575}
-          mx="auto"
+          mx='auto'
         >
-          <GridItem rowSpan={1} colSpan={1} bg="tomato" />
-          <GridItem rowSpan={1} colSpan={1} bg="tomato" />
-          <GridItem rowSpan={1} colSpan={1} bg="tomato" />
+          {products.map((product) => (
+            <GridItem rowSpan={1} colSpan={1}>
+              <DashGalleryCard
+                key={product.id}
+                product={product}
+                width={'200px'}
+              />
+            </GridItem>
+          ))}
 
           <GridItem rowSpan={1} colSpan={1}>
-            <Stack align="center">
+            <Stack align='center'>
               <Button
-                as="button"
+                as='button'
                 minW={'205px'}
-                minH={'271px'}
+                minH={'294px'}
                 maxW={'205px'}
-                maxH={'271px'}
-                borderRadius="xl"
-                bg="#FEFFFE"
-                borderColor="#FECD5B"
-                borderWidth="4px"
-                boxShadow="inner"
+                maxH={'280px'}
+                borderRadius='xl'
+                bg='#FEFFFE'
+                borderColor='#FECD5B'
+                borderWidth='4px'
+                boxShadow='inner'
                 onClick={() => router.push('/Mint')}
                 // colorScheme="#FECD5B"
               >
                 <VStack>
-                  <BiAddToQueue size="50px" />
-                  <Text fontSize="lg">Mint an NFT</Text>
+                  <BiAddToQueue size='50px' />
+                  <Text fontSize='lg'>Mint an NFT</Text>
                 </VStack>
               </Button>
             </Stack>

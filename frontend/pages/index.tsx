@@ -82,6 +82,7 @@ export default function Landing() {
           justify={'space-between'}
           padding={'0.5rem'}
           height={'100vh'}
+          overflow={'auto'}
         >
           <Flex marginRight='0.5rem'>
             <Fade in={true}>
