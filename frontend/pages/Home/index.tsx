@@ -27,7 +27,7 @@ import EventList from '../../components/EventTable';
 import { DashGalleryCard } from '../../components/DashGalleryCard';
 import { products } from '../../components/common/products';
 
-export default function Sidebar() {
+export default function Dashboard() {
   const router = useRouter();
 
   // insert the gallerycards left of the "add mint button"
