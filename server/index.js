@@ -1,9 +1,22 @@
+require('dotenv').config()
 const express = require('express');
+const mongoose = require('mongoose')
 const ipfsClient = require('ipfs-http-client');
 const bodyparser = require('body-parser');
 const fileUpload = require('express-fileupload');
 const fs = require('fs');
 const ejs = require('ejs');
+const routes = require("./routes");
+
+// Connect to MongoDB
+mongoose.connect(process.env.ATLAS_URI, { useNewUrlParser: true })
+.then(() => {
+	console.log('connected to MDB');
+	// middleware for express to read json request
+	app.use(express.json())
+	// prepend routes with /api
+	app.use('/api', routes);
+})
 
 // Connect to IPFS
 const ipfs = ipfsClient({host : 'localhost',port: '5001',protocol:'http'});
@@ -19,7 +32,7 @@ app.get('/',(req,res)=>{
     res.send('YOU IN THE ROOT FAM');
 });
 
-app.post('/uploadFile',(req,res)=>{
+app.post('/uploadFile',(req,res) => {
     const file = req.files.file;
     const fileName = req.body.fileName;
     const filePath = 'files/'+fileName;
@@ -36,6 +49,10 @@ app.post('/uploadFile',(req,res)=>{
         res.send({fileName,fileHash});
     })
 });
+
+app.post('/mintcollection', (req,res) => {
+
+})
 
 const addIpfsFile = async (fileName,filePath)=>{
     const file = fs.readFileSync(filePath);
