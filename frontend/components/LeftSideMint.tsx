@@ -13,7 +13,6 @@ import * as React from 'react';
 import { DropNft } from './DropNft';
 import { RecurringButton } from './RecurringButton';
 
-
 export default function LeftSideMint({
   name,
   setName,
@@ -21,12 +20,11 @@ export default function LeftSideMint({
   setSymbol,
   price,
   setPrice,
-  interval,
   setInterval,
   max,
   setMax,
+  setFilePath,
 }: any) {
-
   return (
     <Box>
       <Box>

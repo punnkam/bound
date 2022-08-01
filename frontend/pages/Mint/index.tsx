@@ -24,6 +24,7 @@ import LeftSideMint from '../../components/LeftSideMint';
 import RightSideMint from '../../components/RightSideMint';
 import Layout from '../../components/Layout';
 import { ethers } from 'ethers';
+import axios from 'axios';
 
 type Args = {
   [key: string]: any;
@@ -37,15 +38,11 @@ type Args = {
 export default function Minting() {
   const { isConnected } = useAccount();
   const [name, setName] = useState('');
-  // const [debouncedName] = useDebounce(name, 1000);
   const [symbol, setSymbol] = useState('');
-  // const [debouncedSymbol] = useDebounce(symbol, 1000);
   const [price, setPrice] = useState<number>();
-  // const [debouncedPrice] = useDebounce(price, 1000);
   const [interval, setInterval] = useState<number>();
-  // const [debouncedInterval] = useDebounce(interval, 1000);
   const [max, setMax] = useState<number>();
-  // const [debouncedMax] = useDebounce(max, 1000);
+  // const [filePath, setFilePath] = useState('');
 
   const [args, setArgs] = useState<Args>({});
 
@@ -117,7 +114,7 @@ export default function Minting() {
         <SimpleGrid
           columns={{ sm: 1, md: 2 }}
           mt={30}
-          mx="auto"
+          mx='auto'
           w={1000}
           spacing={8}
         >
@@ -131,7 +128,7 @@ export default function Minting() {
             setPrice={setPrice}
             price={price}
             setInterval={setInterval}
-            interval={interval}
+            // setFilePath={setFilePath}
           />
           <HStack>
             <RightSideMint />
@@ -166,7 +163,6 @@ export default function Minting() {
             </Text>
           )}
         </Center>
-
       </Box>
     </Layout>
   );
