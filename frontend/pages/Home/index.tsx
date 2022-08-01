@@ -47,7 +47,7 @@ export default function Sidebar() {
           mx='auto'
         >
           {products.map((product) => (
-            <GridItem rowSpan={1} colSpan={1}>
+            <GridItem key={product.id} rowSpan={1} colSpan={1}>
               <DashGalleryCard key={product.id} product={product} />
             </GridItem>
           ))}
