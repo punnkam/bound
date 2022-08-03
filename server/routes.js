@@ -17,21 +17,9 @@ router.post("/collections", async (req, res) => {
 		price: req.body.price,
 		interval: req.body.interval,
 		max: req.body.max,
-		perks: {
-			perk1: req.body.perk1,
-			perk2: req.body.perk2,
-			perk3: req.body.perk3,
-		},
-		details: {
-			detail1: req.body.detail1,
-			detail2: req.body.detail2,
-			detail3: req.body.detail3,
-		},
-		history: {
-			history1: req.body.history1,
-			history2: req.body.history2,
-			history3: req.body.history3,
-		}
+		perks: req.body.perks,
+		details: req.body.details,
+		history: req.body.history,
 	})
 	await collection.save()
 	res.send(collection)
@@ -63,19 +51,13 @@ router.patch("/collections/:tokenId", async (req, res) => {
 			collection.max = req.body.max;
 		}
 		if (req.body.perks) {
-			collection.perk1 = req.body.perk1 ? req.body.perk1 : collection.perk1;
-			collection.perk2 = req.body.perk2 ? req.body.perk2 : collection.perk2;
-			collection.perk3 = req.body.perk3 ? req.body.perk3 : collection.perk3;
+			collection.perks = req.body.perks;
 		}
 		if (req.body.details) {
-			collection.detail1 = req.body.detail1 ? req.body.detail1 : collection.detail1;
-			collection.detail2 = req.body.detail2 ? req.body.detail2 : collection.detail2;
-			collection.detail3 = req.body.detail3 ? req.body.detail3 : collection.detail3;
+			collection.details = req.body.details;
 		}
 		if (req.body.history) {
-			collection.history1 = req.body.history1 ? req.body.history1 : collection.history1;
-			collection.history2 = req.body.history2 ? req.body.history2 : collection.history2;
-			collection.history3 = req.body.history3 ? req.body.history3 : collection.history3;
+			collection.history = req.body.history
 		}
 		await collection.save()
 		res.send(collection)

@@ -94,6 +94,26 @@ export default function Minting() {
       max: max,
     });
     createSub?.();
+
+    const json = {
+      tokenId: 10,
+      name: name,
+      description: 'mock data',
+      price: 'mock data',
+      interval: 'mock data',
+      max: 100,
+      perks: 'mock perks',
+      details: 'mock details',
+      history: 'mock history',
+    };
+    axios
+      .post('http://localhost:6900/api/collections', json)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     <Layout>
@@ -145,9 +165,7 @@ export default function Minting() {
               size='lg'
               borderRadius='xl'
               margin='6'
-              onClick={() => {
-                handleMint();
-              }}
+              onClick={() => handleMint()}
             >
               {isMintLoading && 'Waiting for approval'}
               {isMintStarted && 'Minting...'}

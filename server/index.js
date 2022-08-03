@@ -7,6 +7,7 @@ const fileUpload = require('express-fileupload');
 const fs = require('fs');
 const ejs = require('ejs');
 const routes = require("./routes");
+var cors = require('cors');
 
 // Connect to MongoDB
 mongoose.connect(process.env.ATLAS_URI, { useNewUrlParser: true })
@@ -21,6 +22,8 @@ mongoose.connect(process.env.ATLAS_URI, { useNewUrlParser: true })
 // Connect to IPFS
 const ipfs = ipfsClient({host : 'localhost',port: '5001',protocol:'http'});
 const app = express();
+
+app.use(cors());
 
 app.set('view engine','ejs');
 app.use(bodyparser.urlencoded({extended: true}));
