@@ -14,6 +14,9 @@ router.post("/collections", async (req, res) => {
 		tokenId: req.body.tokenId,
 		name: req.body.name,
 		description: req.body.description,
+		price: req.body.price,
+		interval: req.body.interval,
+		max: req.body.max,
 		perks: {
 			perk1: req.body.perk1,
 			perk2: req.body.perk2,
@@ -48,7 +51,16 @@ router.patch("/collections/:tokenId", async (req, res) => {
 			collection.name = req.body.title;
 		}
 		if (req.body.description) {
-			collection.description = req.body.content;
+			collection.description = req.body.description;
+		}
+		if (req.body.price) {
+			collection.price = req.body.price;
+		}
+		if (req.body.interval) {
+			collection.interval = req.body.interval;
+		}
+		if (req.body.max) {
+			collection.max = req.body.max;
 		}
 		if (req.body.perks) {
 			collection.perk1 = req.body.perk1 ? req.body.perk1 : collection.perk1;

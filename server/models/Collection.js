@@ -4,6 +4,9 @@ const schema = mongoose.Schema({
 	tokenId: Number,
 	name: String,
 	description: String,
+	price: String,
+	interval: String,
+	max: Number,
 	perks: {
 		perk1: String,
 		perk2: String,
