@@ -13,7 +13,6 @@ router.post("/collections", async (req, res) => {
 	const collection = new Collection({
 		tokenId: req.body.tokenId,
 		name: req.body.name,
-		description: req.body.description,
 		price: req.body.price,
 		interval: req.body.interval,
 		max: req.body.max,
@@ -37,9 +36,6 @@ router.patch("/collections/:tokenId", async (req, res) => {
 
 		if (req.body.name) {
 			collection.name = req.body.title;
-		}
-		if (req.body.description) {
-			collection.description = req.body.description;
 		}
 		if (req.body.price) {
 			collection.price = req.body.price;

@@ -3,7 +3,6 @@ const mongoose = require("mongoose")
 const schema = mongoose.Schema({
 	tokenId: Number,
 	name: String,
-	description: String,
 	price: String,
 	interval: String,
 	max: Number,
