@@ -22,52 +22,36 @@ import ModalPerkMint from './ModalPerkMint';
 
 export default function RightSideMint() {
   return (
-    <Box maxH={590} width="auto">
-      <FormControl id="file">
-        <FormLabel fontWeight="semibold">Upload Images</FormLabel>
+    <Box maxH={590} width='auto'>
+      {/* <FormControl id='file'>
+        <FormLabel fontWeight='semibold'>Upload Images</FormLabel>
         <Text>Further describe the NFT</Text>
         <DropImage />
-      </FormControl>
+      </FormControl> */}
+      <FormLabel fontWeight='semibold'>Give a description</FormLabel>
+      <Text>Further describe the NFT</Text>
 
-      <Stack mt={5} spacing={5}>
+      <Stack mt={5} spacing={3}>
         <ModalRequirementMint />
         <ModalDescriptionMint />
         <ModalPerkMint />
       </Stack>
 
-      <HStack mt={1}>
-        <Center>
-          <Button
-            backgroundColor="#1A202C"
-            color="white"
-            width={275}
-            size="md"
-            borderRadius="lg"
-            mt={15}
-            fontSize="xl"
-            variant="outline"
-          >
-            <Box mx={1}>
-              <BiLayerPlus size={25} />
-            </Box>
-            Add an SBT
-          </Button>
-        </Center>
-        <Center>
-          <Button
-            backgroundColor="#FDB251"
-            color="white"
-            width={200}
-            size="md"
-            borderRadius="lg"
-            mt={15}
-            fontSize="xl"
-            variant="outline"
-          >
-            Mint Collection
-          </Button>
-        </Center>
-      </HStack>
+      <Button
+        backgroundColor='#1A202C'
+        color='white'
+        width={'100%'}
+        size='md'
+        borderRadius='lg'
+        mt={15}
+        fontSize='xl'
+        variant='outline'
+      >
+        <Box mx={1}>
+          <BiLayerPlus size={25} />
+        </Box>
+        Add an SBT
+      </Button>
     </Box>
   );
 }

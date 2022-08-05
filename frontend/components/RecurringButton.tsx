@@ -14,7 +14,11 @@ function RadioCard(props: any) {
       <input
         {...input}
         onChange={() => {
-          setValue(Number(props.children[0]));
+          setValue(
+            props.children[0]
+              ? props.children.substring(2) == 'Month'
+              : 12 * props.children[0]
+          );
         }}
       />
       <Box
@@ -39,7 +43,7 @@ function RadioCard(props: any) {
 
 // Step 2: Use the `useRadioGroup` hook to control a group of custom radios.
 export function RecurringButton({ setValue }: any) {
-  const options = ['1 Month', '6 Months', '9 Months'];
+  const options = ['1 Month', '1 Year'];
 
   const { getRootProps, getRadioProps } = useRadioGroup({
     name: 'framework',

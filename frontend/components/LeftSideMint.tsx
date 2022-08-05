@@ -99,15 +99,14 @@ export default function LeftSideMint({
           </FormControl>
         </HStack>
         <HStack>
-          <FormControl isRequired>
+          <FormControl isRequired width='50%'>
             <FormLabel mt={5} fontWeight='semibold'>
               Pricing
             </FormLabel>
             <Input
-              placeholder='ETH'
+              placeholder='ETH (per cycle)'
               bg='#FEFFFE'
               borderColor='#D3D3D3'
-              width={100}
               onChange={(e) => setPrice(e.target.value)}
               value={price}
             />

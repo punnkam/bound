@@ -34,34 +34,35 @@ export default function ModalRequirementMint() {
   return (
     <>
       <HStack
-        backgroundColor="#FEFFFE"
-        borderColor="#D3D3D3"
+        minH={115}
+        backgroundColor='#FEFFFE'
+        borderColor='#D3D3D3'
         borderWidth={1}
-        borderRadius="lg"
+        borderRadius='lg'
         p={3}
       >
         <Box p={1}>
-          <BiCheckDouble size={30} color="#1A202C" />
+          <BiCheckDouble size={30} color='#1A202C' />
         </Box>
         <Spacer />
         <VStack spacing={1}>
-          <Heading size="sm">Requirements</Heading>
+          <Heading size='sm'>Requirements</Heading>
           <Text>Add necessities to receive the token</Text>
         </VStack>
 
         <Spacer />
         <IconButton
           icon={<FiPlusSquare />}
-          aria-label="Add a requirement"
-          fontSize="4xl"
-          background="none"
-          color="#FDB251"
+          aria-label='Add a requirement'
+          fontSize='4xl'
+          background='none'
+          color='#FDB251'
           // will use when this feature comes out
           // onClick={onOpen}
           onClick={() =>
             toast({
               title: 'Not Available',
-              description: "Only for SBTs: Feature coming soon!",
+              description: 'Only for SBTs: Feature coming soon!',
               status: 'error',
               duration: 3000,
               isClosable: true,
@@ -73,7 +74,7 @@ export default function ModalRequirementMint() {
           closeOnOverlayClick={false}
           isOpen={isOpen}
           onClose={onClose}
-          size="4xl"
+          size='4xl'
         >
           <ModalOverlay />
           <ModalContent>
@@ -82,7 +83,7 @@ export default function ModalRequirementMint() {
             <ModalBody pb={6}>{/* <Lorem count={2} /> */}</ModalBody>
 
             <ModalFooter>
-              <Button colorScheme="blue" mr={3}>
+              <Button colorScheme='blue' mr={3}>
                 Save
               </Button>
               <Button onClick={onClose}>Cancel</Button>

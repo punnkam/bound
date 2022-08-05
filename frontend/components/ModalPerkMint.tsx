@@ -33,29 +33,30 @@ export default function ModalPerkMint() {
   return (
     <>
       <HStack
-        backgroundColor="#FEFFFE"
-        borderColor="#D3D3D3"
+        minH={115}
+        backgroundColor='#FEFFFE'
+        borderColor='#D3D3D3'
         borderWidth={1}
-        borderRadius="lg"
+        borderRadius='lg'
         p={3}
       >
         <Box p={1}>
-          <BiStar size={30} color="#1A202C" />
+          <BiStar size={30} color='#1A202C' />
         </Box>
         <Spacer />
         <VStack spacing={1}>
-          <Heading size="sm">Perks</Heading>
+          <Heading size='sm'>Perks</Heading>
           <Text>List the benefits of having the token</Text>
         </VStack>
 
         <Spacer />
         <IconButton
           icon={<FiPlusSquare />}
-          aria-label="Add a requirement"
+          aria-label='Add a requirement'
           onClick={onOpen}
-          fontSize="4xl"
-          background="none"
-          color="#FDB251"
+          fontSize='4xl'
+          background='none'
+          color='#FDB251'
         />
 
         <Modal
@@ -65,7 +66,7 @@ export default function ModalPerkMint() {
           scrollBehavior={'inside'}
         >
           <ModalOverlay />
-          <ModalContent h="600px" maxW="800px">
+          <ModalContent h='600px' maxW='800px'>
             <ModalHeader>Perks</ModalHeader>
             <ModalBody>
               <PerkForm />
@@ -76,7 +77,7 @@ export default function ModalPerkMint() {
               {/* <Button leftIcon={<BiPlus size={20} />}>Add Another Perk</Button>
               <Spacer /> */}
 
-              <Button colorScheme="blue" mr={3}>
+              <Button colorScheme='blue' mr={3}>
                 Save
               </Button>
               <Button onClick={onClose}>Cancel</Button>

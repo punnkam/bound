@@ -150,9 +150,7 @@ export default function Minting() {
             setInterval={setInterval}
             // setFilePath={setFilePath}
           />
-          <HStack>
-            <RightSideMint />
-          </HStack>
+          <RightSideMint />
         </SimpleGrid>
 
         <Center mt='0'>
