@@ -44,6 +44,9 @@ export default function Minting() {
   const [max, setMax] = useState<number>();
   // const [filePath, setFilePath] = useState('');
 
+  const [details, setDetails] = useState('');
+  const [perks, setPerks] = useState('');
+
   const [args, setArgs] = useState<Args>({});
 
   let { config: contractWriteConfig } = usePrepareContractWrite({
@@ -98,13 +101,13 @@ export default function Minting() {
     const json = {
       tokenId: 10,
       name: name,
-      description: 'mock data',
-      price: 'mock data',
-      interval: 'mock data',
+      description: 'mock description',
+      price: price,
+      interval: interval,
       max: 100,
-      perks: 'mock perks',
-      details: 'mock details',
-      history: 'mock history',
+      perks: perks,
+      details: details,
+      history: 'empty history',
     };
     axios
       .post('http://localhost:6900/api/collections', json)
@@ -150,7 +153,12 @@ export default function Minting() {
             setInterval={setInterval}
             // setFilePath={setFilePath}
           />
-          <RightSideMint />
+          <RightSideMint
+            details={details}
+            setDetails={setDetails}
+            perks={perks}
+            setPerks={setPerks}
+          />
         </SimpleGrid>
 
         <Center mt='0'>
@@ -163,7 +171,11 @@ export default function Minting() {
               size='lg'
               borderRadius='xl'
               margin='6'
-              onClick={() => handleMint()}
+              // onClick={() => handleMint()}
+              onClick={() => {
+                console.log(perks);
+                console.log(details);
+              }}
             >
               {isMintLoading && 'Waiting for approval'}
               {isMintStarted && 'Minting...'}

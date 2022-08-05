@@ -20,7 +20,12 @@ import ModalRequirementMint from './ModalRequirementMint';
 import ModalDescriptionMint from './ModalDescriptionMint';
 import ModalPerkMint from './ModalPerkMint';
 
-export default function RightSideMint() {
+export default function RightSideMint({
+  details,
+  setDetails,
+  perks,
+  setPerks,
+}: any) {
   return (
     <Box maxH={590} width='auto'>
       {/* <FormControl id='file'>
@@ -33,8 +38,8 @@ export default function RightSideMint() {
 
       <Stack mt={5} spacing={3}>
         <ModalRequirementMint />
-        <ModalDescriptionMint />
-        <ModalPerkMint />
+        <ModalDescriptionMint value={details} setter={setDetails} />
+        <ModalPerkMint value={perks} setter={setPerks} />
       </Stack>
 
       <Button
@@ -46,6 +51,7 @@ export default function RightSideMint() {
         mt={15}
         fontSize='xl'
         variant='outline'
+        disabled={true}
       >
         <Box mx={1}>
           <BiLayerPlus size={25} />

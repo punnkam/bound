@@ -27,7 +27,7 @@ import { BiStar, BiPlus } from 'react-icons/bi';
 import { FiPlusSquare } from 'react-icons/fi';
 import PerkForm from './PerkForm';
 
-export default function ModalPerkMint() {
+export default function ModalPerkMint({ value, setter }: any) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -77,6 +77,10 @@ export default function ModalPerkMint() {
                       placeholder='Include three perks of the subscription (separate with commas)'
                       bg='#FEFFFE'
                       borderColor='#D3D3D3'
+                      onChange={(e) => {
+                        setter(e.target.value);
+                      }}
+                      value={value}
                     />
                   </Box>
                 </FormControl>
@@ -86,10 +90,17 @@ export default function ModalPerkMint() {
             <ModalCloseButton />
 
             <ModalFooter>
-              <Button colorScheme='blue' mr={3}>
+              <Button colorScheme='blue' mr={3} onClick={onClose}>
                 Save
               </Button>
-              <Button onClick={onClose}>Cancel</Button>
+              <Button
+                onClick={() => {
+                  onClose();
+                  setter('');
+                }}
+              >
+                Cancel
+              </Button>
             </ModalFooter>
           </ModalContent>
         </Modal>

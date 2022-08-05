@@ -26,7 +26,7 @@ import * as React from 'react';
 import { BiEditAlt } from 'react-icons/bi';
 import { FiPlusSquare } from 'react-icons/fi';
 
-export default function ModalDescriptionMint() {
+export default function ModalDescriptionMint({ value, setter }: any) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [resize, setResize] = React.useState('none');
 
@@ -77,6 +77,10 @@ export default function ModalDescriptionMint() {
                       placeholder='Include three pieces of information about the subscription (separate with commas)'
                       bg='#FEFFFE'
                       borderColor='#D3D3D3'
+                      onChange={(e) => {
+                        setter(e.target.value);
+                      }}
+                      value={value}
                     />
                   </Box>
                 </FormControl>
@@ -86,10 +90,17 @@ export default function ModalDescriptionMint() {
             <ModalCloseButton />
 
             <ModalFooter>
-              <Button colorScheme='blue' mr={3}>
+              <Button colorScheme='blue' mr={3} onClick={onClose}>
                 Save
               </Button>
-              <Button onClick={onClose}>Cancel</Button>
+              <Button
+                onClick={() => {
+                  onClose();
+                  setter('');
+                }}
+              >
+                Cancel
+              </Button>
             </ModalFooter>
           </ModalContent>
         </Modal>
