@@ -47,7 +47,7 @@ export default function ModalRequirementMint() {
         <Spacer />
         <VStack spacing={1}>
           <Heading size='sm'>Requirements</Heading>
-          <Text>Add necessities to receive the token</Text>
+          <Text>Coming soon!</Text>
         </VStack>
 
         <Spacer />
@@ -57,6 +57,7 @@ export default function ModalRequirementMint() {
           fontSize='4xl'
           background='none'
           color='#FDB251'
+          disabled={true}
           // will use when this feature comes out
           // onClick={onOpen}
           onClick={() =>

@@ -74,7 +74,7 @@ export default function ModalDescriptionMint() {
                       size='lg'
                       resize='none'
                       h={400}
-                      placeholder='Feel free to include links and further information - Markdown syntax is supported'
+                      placeholder='Include three pieces of information about the subscription (separate with commas)'
                       bg='#FEFFFE'
                       borderColor='#D3D3D3'
                     />

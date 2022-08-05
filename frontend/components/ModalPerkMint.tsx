@@ -59,24 +59,33 @@ export default function ModalPerkMint() {
           color='#FDB251'
         />
 
-        <Modal
-          closeOnOverlayClick={false}
-          isOpen={isOpen}
-          onClose={onClose}
-          scrollBehavior={'inside'}
-        >
+        <Modal closeOnOverlayClick={false} isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
           <ModalContent h='600px' maxW='800px'>
             <ModalHeader>Perks</ModalHeader>
             <ModalBody>
-              <PerkForm />
+              <VStack spacing={5}>
+                <FormControl isRequired>
+                  <FormLabel mt={5} fontWeight='semibold'>
+                    Benefits
+                  </FormLabel>
+                  <Box>
+                    <Textarea
+                      size='lg'
+                      resize='none'
+                      h={400}
+                      placeholder='Include three perks of the subscription (separate with commas)'
+                      bg='#FEFFFE'
+                      borderColor='#D3D3D3'
+                    />
+                  </Box>
+                </FormControl>
+                {/* <Button leftIcon={<FiPlusSquare />}>Add Another Detail</Button> */}
+              </VStack>
             </ModalBody>
             <ModalCloseButton />
 
             <ModalFooter>
-              {/* <Button leftIcon={<BiPlus size={20} />}>Add Another Perk</Button>
-              <Spacer /> */}
-
               <Button colorScheme='blue' mr={3}>
                 Save
               </Button>
