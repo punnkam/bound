@@ -12,6 +12,7 @@ export const products = [
       share: 1,
       sold: 10,
       supply: 500,
+      expires: 'July 2023',
     },
     modalInfo: {
       Title: 'Verci DAO',
@@ -74,6 +75,7 @@ export const products = [
       share: 2,
       sold: 21,
       supply: 500,
+      expires: 'November 2022',
     },
     modalInfo: {
       Title: 'Racing DAO',
@@ -136,6 +138,7 @@ export const products = [
       share: 2,
       sold: 10,
       supply: 500,
+      expires: 'July 2023',
     },
     modalInfo: {
       Title: 'Gorls DAO',

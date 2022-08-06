@@ -73,6 +73,10 @@ export default function Profile() {
               {products.map((product) => (
                 <GridItem key={product.id} margin={'0.5rem'}>
                   <DashGalleryCard key={product.id} product={product} />
+                  <Text margin={'5px'}>
+                    Expires on
+                    <Text textColor={'grey'}>{product.cardInfo.expires}</Text>
+                  </Text>
                 </GridItem>
               ))}
             </Grid>
