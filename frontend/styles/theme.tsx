@@ -5,7 +5,7 @@ const theme = extendTheme({
   styles: {
     global: () => ({
       body: {
-        bg: '#EBEDEC',
+        bg: '#F9F9FC',
       },
     }),
   },
@@ -13,6 +13,7 @@ const theme = extendTheme({
     heading: 'Chakra Petch',
     body: 'Chakra Petch',
   },
+  boxSizing: 'border-box',
 });
 
 export default theme;

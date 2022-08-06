@@ -23,7 +23,7 @@ import {
 import { BiShoppingBag } from 'react-icons/bi';
 import Event from './Event';
 
-export default function EventList() {
+export default function EventTable() {
   return (
     <Stack
       bg="#FEFFFE"
