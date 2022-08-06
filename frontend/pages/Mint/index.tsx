@@ -171,11 +171,7 @@ export default function Minting() {
               size='lg'
               borderRadius='xl'
               margin='6'
-              // onClick={() => handleMint()}
-              onClick={() => {
-                console.log(perks);
-                console.log(details);
-              }}
+              onClick={() => handleMint()}
             >
               {isMintLoading && 'Waiting for approval'}
               {isMintStarted && 'Minting...'}

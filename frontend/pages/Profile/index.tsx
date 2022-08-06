@@ -28,13 +28,21 @@ import Layout from '../../components/Layout';
 import StatTotalSales from '../../components/StatTotalSales';
 import StatTotalSupply from '../../components/StatTotalSupply';
 import StatNumberOwners from '../../components/StatNumberOwners';
+import * as React from 'react';
 import EventList from '../../components/EventTable';
 import { DashGalleryCard } from '../../components/DashGalleryCard';
 import { products } from '../../components/common/products';
 
 export default function Profile() {
   const router = useRouter();
-
+  /* fixes hydration error */
+  const [hasMounted, setHasMounted] = React.useState(false);
+  React.useEffect(() => {
+    setHasMounted(true);
+  }, []);
+  if (!hasMounted) {
+    return null;
+  }
   // insert the gallerycards left of the "add mint button"
   return (
     <Layout>
@@ -73,6 +81,10 @@ export default function Profile() {
               {products.map((product) => (
                 <GridItem key={product.id} margin={'0.5rem'}>
                   <DashGalleryCard key={product.id} product={product} />
+                  <Text margin={'5px'}>
+                    Expires on
+                    <Text textColor={'grey'}>{product.cardInfo.expires}</Text>
+                  </Text>
                 </GridItem>
               ))}
             </Grid>
