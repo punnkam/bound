@@ -83,43 +83,43 @@ export const products = [
       Description: 'Go to racing events with your frens',
       Details: {
         first: {
-          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          text: 'The subscription runs from the start of the racing reason all the way to the end. Make sure you never miss a beat.',
           imageSrc: 'racerdao/time.png',
         },
         second: {
-          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          text: 'Get access to exclusive after parties in famous cities like Singapore, Abu Dhabi, Monaco, and many more places. ',
           imageSrc: 'racerdao/clubs.png',
         },
         third: {
-          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          text: 'Our subscription cannot be held liable for any damages occurred through the provisioning of our perks and access.',
           imageSrc: 'racerdao/docs.png',
         },
       },
       Perks: {
         first: {
-          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          text: 'Attend races around the world throughout the season. Fly around the world for every single lights out and away we go!',
           imageSrc: 'racerdao/f1.png',
         },
         second: {
-          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          text: 'Exclusive access to the paddock on Qualifying day. See drivers in the flesh executing under the greatest of pressures.',
           imageSrc: 'racerdao/lewis.png',
         },
         third: {
-          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          text: 'Race in an F1 car from a previous year. Be taught by racing experts with years of experience teaching young drivers.',
           imageSrc: 'racerdao/drive-f1.png',
         },
       },
       History: {
         first: {
-          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          text: 'Coming soon!',
           imageSrc: 'racerdao/f1history.png',
         },
         second: {
-          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          text: 'Coming soon!',
           imageSrc: 'racerdao/abudabi.png',
         },
         third: {
-          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod dui sed dui fermentum, a vestibulum leo volutpat.',
+          text: 'Coming soon!',
           imageSrc: 'racerdao/daohistory.png',
         },
       },
