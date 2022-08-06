@@ -11,6 +11,8 @@ import Link from 'next/link';
 import React from 'react';
 import { BiImageAdd } from 'react-icons/bi';
 
+// NOT USED.. YET
+
 export const DropImage = (props: CenterProps) => (
   <HStack mt={5} spacing={5}>
     <LinkBox
@@ -32,7 +34,7 @@ export const DropImage = (props: CenterProps) => (
         </Square>
       </Center>
     </LinkBox>
-     <LinkBox
+    <LinkBox
       borderWidth="1px"
       borderRadius="xl"
       px="6"
@@ -50,7 +52,8 @@ export const DropImage = (props: CenterProps) => (
           </LinkOverlay>
         </Square>
       </Center>
-    </LinkBox> <LinkBox
+    </LinkBox>{' '}
+    <LinkBox
       borderWidth="1px"
       borderRadius="xl"
       px="6"

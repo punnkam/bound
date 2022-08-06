@@ -50,14 +50,14 @@ export default function Profile() {
         <TabList justifyContent={'center'}>
           <Tab
             _selected={{
-              color: '#FEC000',
+              color: '#FEA401',
             }}
           >
             Collection
           </Tab>
           <Tab
             _selected={{
-              color: '#FEC000',
+              color: '#FEA401',
             }}
           >
             Activity
@@ -71,12 +71,12 @@ export default function Profile() {
             </Flex>
             <Grid
               // h="500px"
-              templateRows='repeat(2, 1fr)'
-              templateColumns='repeat(4, 1fr)'
+              templateRows="repeat(2, 1fr)"
+              templateColumns="repeat(4, 1fr)"
               gap={4}
               width={1050}
               height={575}
-              mx='auto'
+              mx="auto"
             >
               {products.map((product) => (
                 <GridItem key={product.id} margin={'0.5rem'}>
@@ -101,7 +101,7 @@ export default function Profile() {
           </TabPanel>
         </TabPanels>
       </Tabs>
-      <Flex direction='column'></Flex>
+      <Flex direction="column"></Flex>
     </Layout>
   );
 }

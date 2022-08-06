@@ -4,6 +4,7 @@ import Layout from '../components/Layout';
 import '@rainbow-me/rainbowkit/styles.css';
 import { ChakraProvider } from '@chakra-ui/react';
 import theme from '../styles/theme';
+import { MantineProvider } from '@mantine/core';
 
 import {
   getDefaultWallets,
@@ -45,19 +46,28 @@ const wagmiClient = createClient({
 /// in between is the children from Layout.tsx
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <WagmiConfig client={wagmiClient}>
-      <RainbowKitProvider
-        chains={chains}
-        theme={lightTheme({
-          accentColor: '#fbbf24',
-          accentColorForeground: 'white',
-        })}
-      >
-        <ChakraProvider theme={theme}>
-          <Component {...pageProps} />
-        </ChakraProvider>
-      </RainbowKitProvider>
-    </WagmiConfig>
+    <MantineProvider
+      withGlobalStyles
+      withNormalizeCSS
+      theme={{
+        /** Put your mantine theme override here */
+        colorScheme: 'light',
+      }}
+    >
+      <WagmiConfig client={wagmiClient}>
+        <RainbowKitProvider
+          chains={chains}
+          theme={lightTheme({
+            accentColor: '#fbbf24',
+            accentColorForeground: 'white',
+          })}
+        >
+          <ChakraProvider theme={theme}>
+            <Component {...pageProps} />
+          </ChakraProvider>
+        </RainbowKitProvider>
+      </WagmiConfig>
+    </MantineProvider>
   );
 }
 

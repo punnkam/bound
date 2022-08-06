@@ -18,6 +18,8 @@ enum modalPageEnum {
   HISTORY = 3,
 }
 
+// OLD VERSION
+
 export default function ModalDetail({ modalInfo, cardInfo }: any) {
   const [modalPage, setModalPage] = useState(modalPageEnum.PERKS);
 

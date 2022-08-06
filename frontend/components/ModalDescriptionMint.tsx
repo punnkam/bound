@@ -34,49 +34,49 @@ export default function ModalDescriptionMint({ value, setter }: any) {
     <>
       <HStack
         minH={115}
-        backgroundColor='#FEFFFE'
-        borderColor='#D3D3D3'
+        backgroundColor="#FEFFFE"
+        borderColor="#D3D3D3"
         borderWidth={1}
-        borderRadius='lg'
+        borderRadius="lg"
         p={3}
       >
         <Box p={1}>
-          <BiEditAlt size={30} color='#1A202C' />
+          <BiEditAlt size={30} color="#1A202C" />
         </Box>
         <Spacer />
         <VStack spacing={1}>
-          <Heading size='sm'>Description</Heading>
+          <Heading size="sm">Description</Heading>
           <Text>Include links and information</Text>
         </VStack>
 
         <Spacer />
         <IconButton
           icon={<FiPlusSquare />}
-          aria-label='Add a requirement'
+          aria-label="Add a requirement"
           onClick={onOpen}
-          fontSize='4xl'
-          background='none'
-          color='#FDB251'
+          fontSize="4xl"
+          background="none"
+          color="#FEA401"
         />
 
         <Modal closeOnOverlayClick={false} isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
-          <ModalContent h='600px' maxW='800px'>
+          <ModalContent h="600px" maxW="800px">
             <ModalHeader>Description</ModalHeader>
             <ModalBody>
               <VStack spacing={5}>
                 <FormControl isRequired>
-                  <FormLabel mt={5} fontWeight='semibold'>
+                  <FormLabel mt={5} fontWeight="semibold">
                     Details
                   </FormLabel>
                   <Box>
                     <Textarea
-                      size='lg'
-                      resize='none'
+                      size="lg"
+                      resize="none"
                       h={400}
-                      placeholder='Include three pieces of information about the subscription (separate with commas)'
-                      bg='#FEFFFE'
-                      borderColor='#D3D3D3'
+                      placeholder="Include three pieces of information about the subscription (separate with commas)"
+                      bg="#FEFFFE"
+                      borderColor="#D3D3D3"
                       onChange={(e) => {
                         setter(e.target.value);
                       }}
@@ -90,7 +90,7 @@ export default function ModalDescriptionMint({ value, setter }: any) {
             <ModalCloseButton />
 
             <ModalFooter>
-              <Button colorScheme='blue' mr={3} onClick={onClose}>
+              <Button colorScheme="blue" mr={3} onClick={onClose}>
                 Save
               </Button>
               <Button

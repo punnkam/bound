@@ -25,7 +25,7 @@ export default function Event() {
       <Tr>
         <Td>
           <HStack>
-            <BiShoppingBag color="#FECD5B" />
+            <BiShoppingBag color="#FEA401" />
             <Text>Buy</Text>
           </HStack>
         </Td>
